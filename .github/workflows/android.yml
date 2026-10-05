@@ -21,14 +21,17 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Grant Execute Permission for Gradle
-        run: chmod +x gradlew || true
+      - name: Grant Execute Permission for Gradle Wrapper
+        run: chmod +x gradlew
+
+      - name: Inspect Projects and Available Tasks
+        run: ./gradlew projects && ./gradlew :app:tasks --all
 
       - name: Run Core & Infrastructure Tests
-        run: gradle :core:test :infrastructure:test --stacktrace
+        run: ./gradlew :core:test :infrastructure:test --stacktrace
 
       - name: Build Debug APK
-        run: gradle :app:assembleDebug --stacktrace
+        run: ./gradlew :app:assembleDebug --stacktrace
 
       - name: Verify Debug APK Existence
         run: |
