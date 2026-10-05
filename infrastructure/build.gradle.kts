@@ -16,7 +16,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 dependencies {
     implementation(project(":core"))
     implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.pdfbox.android)
+    implementation(libs.pdfbox)
     implementation(libs.gson)
 
     testImplementation(libs.junit)

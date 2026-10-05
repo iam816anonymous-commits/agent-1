@@ -6,6 +6,7 @@ plugins {
 android {
     namespace = "com.skillbuilder.agent"
     compileSdk = 34
+    buildToolsVersion = "34.0.0"
 
     defaultConfig {
         applicationId = "com.skillbuilder.agent"

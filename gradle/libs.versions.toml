@@ -7,7 +7,7 @@ activityCompose = "1.8.2"
 composeBom = "2024.02.00"
 room = "2.6.1"
 coroutines = "1.8.0"
-pdfbox = "2.0.27.0"
+pdfbox = "2.0.27"
 junit = "4.13.2"
 mockk = "1.13.9"
 gson = "2.10.1"
@@ -31,7 +31,7 @@ androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = 
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 
-pdfbox-android = { group = "com.tom-roush", name = "pdfbox-android", version.ref = "pdfbox" }
+pdfbox = { group = "org.apache.pdfbox", name = "pdfbox", version.ref = "pdfbox" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
