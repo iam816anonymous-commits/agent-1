@@ -1,20 +1,13 @@
 plugins {
-    id("com.android.library")
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.jvm)
 }
 
-android {
-    namespace = "com.skillbuilder.core"
-    compileSdk = 34
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 
-    defaultConfig {
-        minSdk = 26
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     kotlinOptions {
         jvmTarget = "17"
     }
