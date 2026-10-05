@@ -14,6 +14,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Print CI Environment Diagnostics
+        run: |
+          echo "CI Commit SHA: ${{ github.sha }}"
+          echo "CI Ref: ${{ github.ref }}"
+          git rev-parse HEAD
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -24,8 +30,15 @@ jobs:
       - name: Grant Execute Permission for Gradle Wrapper
         run: chmod +x gradlew
 
+      - name: Print Gradle Version
+        run: ./gradlew --version
+
       - name: Inspect Projects and Available Tasks
-        run: ./gradlew projects && ./gradlew :app:tasks --all
+        run: |
+          ./gradlew projects
+          ./gradlew :app:tasks --all
+          ./gradlew :core:tasks --all
+          ./gradlew :infrastructure:tasks --all
 
       - name: Run Core & Infrastructure Tests
         run: ./gradlew :core:test :infrastructure:test --stacktrace
