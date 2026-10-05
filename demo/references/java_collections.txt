@@ -1,0 +1,13 @@
+Java Collections Reference Manual
+
+Page 1
+Java HashMap Details:
+HashMap stores keys and values in internal bucket arrays.
+Index calculation relies on key.hashCode() modulo array length.
+Equal keys must produce identical hashCode values.
+If equals() is overridden without hashCode(), put() and get() operate inconsistently.
+HashMap permits exactly one null key.
+Iteration is performed over keySet(), values(), or entrySet().
+Frequency counting pattern uses getOrDefault(key, 0) + 1.
+Mutating key objects after insertion breaks key lookup.
+TREEIFY_THRESHOLD converts bucket lists to red-black trees under heavy collision.
