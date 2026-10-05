@@ -49,10 +49,6 @@ android {
     }
 }
 
-tasks.matching { it.name.startsWith("check") && it.name.endsWith("AarMetadata") }.configureEach {
-    enabled = false
-}
-
 dependencies {
     implementation(project(":core"))
     implementation(project(":infrastructure"))
